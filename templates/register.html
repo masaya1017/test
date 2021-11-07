@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>登録画面</h2>
+    <a href="{{ url_for('select') }}">一覧画面へ</a>
+    <form action="/registration" method=post>
+        {{ form.hidden_tag() }}
+        　<div style="margin: 10px;">
+            {% for error in form.name.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% if message %}<strong>message:</strong> {{ message }}{% endif %}
+        <dl>
+            <dt>作業名称:
+            <dd><input type=text name=name>
+            <dd><input type=submit value="登録">
+        </dl>
+    </form>
+</body>
+
+</html>

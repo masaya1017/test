@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストップウォッチ</title>
+    <script>
+        window.onload = function () {
+            var startButton = document.getElementById("start");
+            var stopButton = document.getElementById("stop");
+            var display = document.getElementById("display");
+            var canvas = document.getElementById("mycanvas");
+            var startTime, timer;
+
+            var ctx = canvas.getContext("2d");
+
+            var img = new Image();
+            const imgWidth = 400;
+
+            img.onload = function () {
+                const imgHeight = img.height * (imgWidth / img.width);
+
+                ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+            };
+            img.src = "./images/dog.jpg"
+
+            startButton.onclick = start;
+
+            function start() {
+                startButton.onclick = null;
+                stopButton.onclick = stop
+                startTime = new Date();
+
+                timer = setInterval(function () {
+                    var now = new Date();
+                    display.innerHTML = ((now - startTime) / 1000).toFixed(2);
+                }, 10);
+            }
+            function stop() {
+                clearInterval(timer);
+                startButton.onclick = start;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p id="display">0.00<br>
+        <input id="start" type="button" value="start">
+        <input id="stop" type="button" value="stop">
+    </p>
+    <p>
+        <canvas id="mycanvas" width="640" height="400"></canvas>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../static/validate.js"></script>
+    <link rel="stylesheet" href="../static/validate.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST" name="form">
+        <table>
+            <tbody>
+                <!-- お名前 -->
+                <tr>
+                    <th></th>
+                    <td>
+                        <div class="err-msg-name"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="name">お名前</label></th>
+                    <td><input type="text" name="name" id="name" placeholder="ジャバ　スクリプ子"></td>
+                </tr>
+                <!-- パスワード -->
+                <tr>
+                    <th></th>
+                    <td class="err-msg-pass"></td>
+                </tr>
+                <tr>
+                    <th><label for="password">パスワード</label></th>
+                    <td><input type="password" name="password" id="password" placeholder="5文字以上の英数字"></td>
+                </tr>
+                <!-- パスワード再入力 -->
+                <tr>
+                    <th></th>
+                    <td class="err-msg-passre"></td>
+                </tr>
+                <tr>
+                    <th><label for="pass-re">パスワード(再入力)</label></th>
+                    <td><input type="password" name="pass-re" id="pass-re" placeholder="5文字以上の英数字"></td>
+                </tr>
+                <!-- 送信ボタン -->
+                <tr>
+                    <th></th>
+                    <td><input type="submit" class="submit"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>
